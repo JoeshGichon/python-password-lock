@@ -24,3 +24,14 @@ class TestPassword(unittest.TestCase):
         self.new_credentials.save_credentials()
         self.assertEqual(len(User.users_list),1) 
         self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_save_multiple_credentials(self): 
+        self.new_credentials.save_credentials()
+        test_credential = Credentials("Instagrame","Joe","JT")
+        test_credential.save_credentials()
+        message = "Cannot add multiple user"
+        self.assertGreater(len(Credentials.credentials_list),1,message)
+
+
+if __name__ == '__main__':
+    unittest.main()   
