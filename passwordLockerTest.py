@@ -41,7 +41,7 @@ class TestPassword(unittest.TestCase):
 
     def test_find_account_by_password(self): 
         self.new_user.save_user()
-        test_user = User("Mercy Mumbi","Alice","9876")
+        test_user = User("Joe Tech","JT","0000")
         test_user.save_user()
         
         found_user = User.find_by_password("9876")
@@ -51,12 +51,21 @@ class TestPassword(unittest.TestCase):
 
     def test_find_credential(self):
         self.new_credentials.save_credentials()
-        test_credential = Credentials("facebook","bale","meforyou")
+        test_credential = Credentials("Instagram","JG","6789")
         test_credential.save_credentials()
         
-        found_credential = Credentials.find_credential("facebook")
+        found_credential = Credentials.find_credential("Instagram")
         
         self.assertEqual(found_credential.account,test_credential.account)
+
+    def test_delete_credentials_account(self): 
+        self.new_credentials.save_credentials()
+        test_credential = Credentials("Instagram","JG","6789")
+        test_credential.save_credentials()
+        
+        test_credential.delete_credential_account("Instagram")
+        
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 if __name__ == '__main__':
     unittest.main()   
