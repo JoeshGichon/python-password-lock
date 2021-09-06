@@ -81,6 +81,39 @@ def main():
                 message = print("First Create An Account")
                 return message
 
+        elif userInput == "crn":
+            try:
+                print("\n")
+                print(f"Welcome back:") 
+                print("Create new account credentials")
+                print("\n")
+                
+                print("Enter account you wish to create:e.g twitter")
+                new_account = input()
+                
+                print("Enter your username:")
+                new_username = input()
+                
+                print("Would you like the application to generate a password for you?(Y/N)")
+                user_preference = input().upper()
+                if user_preference == "Y": 
+                    new_password = f"0246{new_account}"
+                    print("\n")
+                    print(f"Your {new_account} password is: {new_password}")
+                else: 
+                    print("Enter password of your choice:")
+                    new_password = input()
+                    print("\n")
+                    print(f"Your {new_account} password is: {new_password}")
+                    
+                print("\n")
+                save_credentials_details(create_credentials(new_account,new_username,new_password))
+                print(f"Successfully created your new {new_account} account credentials.")
+                print("\n")
+            except UnboundLocalError: 
+                message = print("Create an account with us first.")
+                return message
+
 
 if __name__ == '__main__': 
     main()
