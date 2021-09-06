@@ -5,7 +5,7 @@ This project was generated with [python3] version 3.6.
 
 #### By **John Gicho**
 ## Description
-Preparing.
+A python command line application that is able to store all my passwords for different platforms, retrieve the passwords when needed and authenticate user for them to use the application.
 
 # Setup/Installation Requirements
 python 3.6
