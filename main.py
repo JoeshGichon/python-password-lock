@@ -20,4 +20,7 @@ def find_account(password_input):
 def find_credential(account_name_input):
     return Credentials.find_credential(account_name_input)
 
+def delete_credential(to_delete): 
+    return Credentials.delete_credential_account(to_delete)
+
 
