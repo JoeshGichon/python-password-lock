@@ -39,6 +39,14 @@ class TestPassword(unittest.TestCase):
         
         self.assertEqual(len(User.users_list),2)
 
+    def test_find_account_by_password(self): 
+        self.new_user.save_user()
+        test_user = User("Mercy Mumbi","Alice","9876")
+        test_user.save_user()
+        
+        found_user = User.find_by_password("9876")
+        
+        self.assertEqual(found_user.password,test_user.password)
 
 if __name__ == '__main__':
     unittest.main()   
