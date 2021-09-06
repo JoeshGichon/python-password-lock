@@ -25,8 +25,11 @@ def delete_credential(to_delete):
 
 
 def main(): 
-    print("Hello there")
-    pass
+    print("Hello there, Welcome to password Locker application")
+    print("\n")
+
+    while True:
+        print("To create an account and or login to your account, use: cr - create a new account, str - store existing credentials, crn- create new account credentials, displ - display account credentials, delt - delete credentials account, ext - exit")
 
 
 if __name__ == '__main__': 
