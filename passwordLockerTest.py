@@ -32,6 +32,13 @@ class TestPassword(unittest.TestCase):
         message = "Cannot add multiple user"
         self.assertGreater(len(Credentials.credentials_list),1,message)
 
+    def test_save_multiple_users(self): 
+        self.new_user.save_user()
+        test_user = User("Joe Tech","JT","0000")
+        test_user.save_user()
+        
+        self.assertEqual(len(User.users_list),2)
+
 
 if __name__ == '__main__':
     unittest.main()   
