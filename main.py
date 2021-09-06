@@ -31,6 +31,33 @@ def main():
     while True:
         print("To create an account and or login to your account, use: cr - create a new account, str - store existing credentials, crn- create new account credentials, displ - display account credentials, delt - delete credentials account, ext - exit")
 
+        nameInput = input().lower()
+
+        if nameInput == "cr": 
+            print("\n")
+            print("Account Creation")
+
+            print("Enter Your Official Name: ")
+            o_name = input()
+            
+            print("Enter Username: ")
+            u_name = input()
+            
+            print("Enter Password:")
+            p_word = input()
+            print("Confirm password")
+            test_password = input()
+
+            if p_word == test_password: 
+                print("\n")
+                save_user_details(create_user(o_name,u_name,p_word))
+                print(f"Congratulations {o_name}, For successfully creating an account.")
+                print('\n')
+
+            else: 
+                print("Password miss match,Try again")
+                print("\n")
+
 
 if __name__ == '__main__': 
     main()
