@@ -14,4 +14,10 @@ def save_user_details(user):
 def save_credentials_details(credentials): 
     credentials.save_credentials()
 
+def find_account(password_input):
+    return User.find_by_password(password_input)
+  
+def find_credential(account_name_input):
+    return Credentials.find_credential(account_name_input)
+
 
