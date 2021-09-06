@@ -24,3 +24,12 @@ def delete_credential(to_delete):
     return Credentials.delete_credential_account(to_delete)
 
 
+def main(): 
+    print("Hello there")
+    pass
+
+
+if __name__ == '__main__': 
+    main()
+
+
