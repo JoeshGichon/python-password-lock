@@ -31,9 +31,9 @@ def main():
     while True:
         print("To create an account and or login to your account, use: cr - create a new account, str - store existing credentials, crn- create new account credentials, displ - display account credentials, delt - delete credentials account, ext - exit")
 
-        nameInput = input().lower()
+        userInput = input().lower()
 
-        if nameInput == "cr": 
+        if userInput == "cr": 
             print("\n")
             print("Account Creation")
 
@@ -57,6 +57,29 @@ def main():
             else: 
                 print("Password miss match,Try again")
                 print("\n")
+
+        elif userInput == "str":
+            try:
+                print("\n")
+                print(f"{o_name},store your existing accounts Details.") 
+                
+                print("Enter Account name:")
+                acc_name = input()
+                
+                print("Enter Account username")
+                acc_username = input()
+                
+                print("Enter Account password:")
+                acc_password = input()
+
+                print("\n")
+                save_credentials_details(create_credentials(acc_name,acc_username,acc_password))
+                print(f"Successfully saved details of your {acc_name} account.")
+                print("\n")
+
+            except UnboundLocalError: 
+                message = print("First Create An Account")
+                return message
 
 
 if __name__ == '__main__': 
