@@ -114,9 +114,33 @@ def main():
                 message = print("Create an account with us first.")
                 return message
 
+        elif userInput == "displ": 
+            print("\n")
+            print("Enter password to login and view account credentials:")
+            password_input = input()
+            if find_account(password_input): 
+                print("Enter account type to view:")
+                account_to_find = input()
+                if find_credential(account_to_find): 
+                    outcome = find_credential(account_to_find)
+                    print("\n")
+                    print("Account Details:")
+                    print("-"*20)
+                    print(f"Account name: {outcome.account}")
+                    print(f"Username: {outcome.username}")
+                    print(f"Password: {outcome.password}")
+                    print("\n")
+                else: 
+                    print("No credential account found")
+                    print("\n")
+          
+            else: 
+                print("Incorrect password.")
+                print("\n")
+
         elif userInput == "dlt": 
             print("\n")
-            print("Enter account name to delete e.g facebook:")
+            print("Enter account name to delete.e.g instagram")
             account_to_delete = input()
             if delete_credential(account_to_delete): 
                 print("\n")
