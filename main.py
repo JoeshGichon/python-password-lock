@@ -29,7 +29,7 @@ def main():
     print("\n")
 
     while True:
-        print("To create an account and or login to your account, use: cr - create a new account, str - store existing credentials, crn- create new account credentials, displ - display account credentials, delt - delete credentials account, ext - exit")
+        print("To create an account and or login to your account, use: cr - To create a new account, str - To store existing credentials, crn- To create new account credentials, displ - To display account credentials, delt - To delete credentials account, ext - To exit application")
 
         userInput = input().lower()
 
@@ -113,6 +113,13 @@ def main():
             except UnboundLocalError: 
                 message = print("Create an account with us first.")
                 return message
+
+        elif userInput == 'ext': 
+            print("Thank you for using your application.")
+            break
+    
+        else: 
+            print("Unknown command,Enter the available input:")
 
 
 if __name__ == '__main__': 
