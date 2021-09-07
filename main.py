@@ -114,6 +114,18 @@ def main():
                 message = print("Create an account with us first.")
                 return message
 
+        elif userInput == "dlt": 
+            print("\n")
+            print("Enter account name to delete e.g facebook:")
+            account_to_delete = input()
+            if delete_credential(account_to_delete): 
+                print("\n")
+                print(f"Successfully deleted your {account_to_delete} account credential.")
+                print("\n")
+            else: 
+                print("Cannot delete the credential account that you inputted.")
+                print("\n")
+
         elif userInput == 'ext': 
             print("Thank you for using your application.")
             break
